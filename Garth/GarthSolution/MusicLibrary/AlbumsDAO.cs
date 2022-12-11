@@ -128,6 +128,38 @@ namespace MusicLibrary
             connection.Close();
             return numRows;
         }
+        // Display all songs for this album in separate dataGridView
+        public List <Song> getSongsForAlbum(int albumID)
+        {
+            List<Song> songsToReturn = new List<Song>();
+
+            SqlConnection connection = new SqlConnection(connString);
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT * FROM songs WHERE AlbumID = @albumID";
+            command.Parameters.AddWithValue("@albumID", albumID);
+            command.Connection = connection;
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Song s = new Song
+                    {
+                        AlbumID = reader.GetInt32(0),
+                        SongNumber = reader.GetInt32(1),
+                        SongName = reader.GetString(2),
+                        SongDuration = reader.GetString(3)
+                    };
+                    songsToReturn.Add(s);
+                }
+            }
+            connection.Close();
+
+            return songsToReturn;
+        }
 
     }
 

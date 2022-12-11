@@ -13,6 +13,7 @@ namespace GarthProject
             InitializeComponent();
         }
         BindingSource albumBindingSource = new BindingSource();
+        BindingSource songBindingSource= new BindingSource();
         AlbumsDAO albumsDAO = new AlbumsDAO();
 
         private void btnLoadData_Click(object sender, EventArgs e)
@@ -341,7 +342,12 @@ namespace GarthProject
             //pbCurrentAlbum.Load(imageURL);
             int p = Convert.ToInt32(imageURL);
             pbCurrentAlbum.Image = Image.FromFile(AlbumImages.images[p]);
-        }
+
+            AlbumsDAO albumsDAO = new AlbumsDAO();
+
+            songBindingSource.DataSource = albumsDAO.getSongsForAlbum((int)dgvAlbums.Rows[rowClicked].Cells[0].Value);
+            dgvSongs.DataSource = songBindingSource;
+}
 
         private void btnAddAlbum_Click(object sender, EventArgs e)
         {
@@ -376,16 +382,20 @@ namespace GarthProject
 
             Validator validator = new Validator();
 
-            errorMessage += validator.IsNotBlank(txtAlbumYear.Text,
+
+            //Checking for blanks
+            errorMessage += validator.IsPresent(txtAlbumYear.Text,
             txtAlbumYear.Tag.ToString());
-            errorMessage += validator.IsNotBlank(txtAlbumArtist.Text,
+            errorMessage += validator.IsPresent(txtAlbumArtist.Text,
             txtAlbumArtist.Tag.ToString());
-            errorMessage += validator.IsNotBlank(txtAlbumDesc.Text,
+            errorMessage += validator.IsPresent(txtAlbumDesc.Text,
             txtAlbumDesc.Tag.ToString());
-            errorMessage += validator.IsNotBlank(txtAlbumName.Text,
+            errorMessage += validator.IsPresent(txtAlbumName.Text,
             txtAlbumName.Tag.ToString());
-            errorMessage += validator.IsNotBlank(txtAlbumURL.Text,
+            errorMessage += validator.IsPresent(txtAlbumURL.Text,
             txtAlbumURL.Tag.ToString());
+
+            //checking for range starting from birth year.
 
             errorMessage += validator.IsWithinRange(txtAlbumYear.Text,
             txtAlbumYear.Tag.ToString(),

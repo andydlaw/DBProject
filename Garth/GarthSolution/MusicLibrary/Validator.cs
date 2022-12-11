@@ -11,7 +11,7 @@ namespace GarthProject
     {
         //checking blank fields
 
-        public string IsNotBlank(string value, string name)
+        public string IsPresent(string value, string name)
         {
             string msg = "";
             if (value == "")
