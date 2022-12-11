@@ -161,6 +161,38 @@ namespace MusicLibrary
             return songsToReturn;
         }
 
+        public List<AlbumFacts> getFactsForAlbum(int albumID)
+        {
+            List<AlbumFacts> factsToReturn = new List<AlbumFacts>();
+
+            SqlConnection connection = new SqlConnection(connString);
+
+            connection.Open();
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "SELECT * FROM AlbumFacts WHERE AlbumID = @albumID";
+            command.Parameters.AddWithValue("@albumID", albumID);
+            command.Connection = connection;
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    AlbumFacts s = new AlbumFacts
+                    {
+                        AlbumID = reader.GetInt32(0),
+                        AlbumReleaseDate = reader.GetString(1),
+                        AlbumStudio = reader.GetString(2),
+                        AlbumDuration = reader.GetString(3),
+                        AlbumLabel = reader.GetString(4)
+                    };
+                    factsToReturn.Add(s);
+                }
+            }
+            connection.Close();
+
+            return factsToReturn;
+        }
     }
 
 

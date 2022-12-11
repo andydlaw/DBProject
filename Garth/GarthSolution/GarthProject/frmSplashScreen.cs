@@ -88,25 +88,41 @@ namespace GarthProject
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
+            Random r = new Random();
+            int rInt = r.Next(0, 16);
 
             //Loading Images to the splash Screen
 
-            pb00.Image = Image.FromFile(AlbumImages.images[0]);             
-            pb01.Image = Image.FromFile(AlbumImages.images[1]);
-            //pb02.Image = Image.FromFile(AlbumImages.images[2]);
-            pb03.Image = Image.FromFile(AlbumImages.images[3]);
-            //pb04.Image = Image.FromFile(AlbumImages.images[4]);
-            pb05.Image = Image.FromFile(AlbumImages.images[5]);
-            //pb06.Image = Image.FromFile(AlbumImages.images[6]);
-            pb07.Image = Image.FromFile(AlbumImages.images[7]);
-            //pb08.Image = Image.FromFile(AlbumImages.images[8]);
-            pb09.Image = Image.FromFile(AlbumImages.images[9]);
-            //pb10.Image = Image.FromFile(AlbumImages.images[10]);
-            pb11.Image = Image.FromFile(AlbumImages.images[11]);
-            //pb12.Image = Image.FromFile(AlbumImages.images[12]);
-            pb13.Image = Image.FromFile(AlbumImages.images[13]);
-            //pb14.Image = Image.FromFile(AlbumImages.images[14]);
-            pb15.Image = Image.FromFile(AlbumImages.images[15]);
+            pb00.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb01.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb02.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb03.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb04.Image = Image.FromFile(AlbumImages.images[rInt]);
+
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb05.Image = Image.FromFile(AlbumImages.images[rInt]);
+            //pb06.Image = Image.FromFile(AlbumImages.images[rInt]);
+
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb07.Image = Image.FromFile(AlbumImages.images[rInt]);
+            //pb08.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb09.Image = Image.FromFile(AlbumImages.images[rInt]);
+            //pb10.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+            pb11.Image = Image.FromFile(AlbumImages.images[rInt]);
+            //pb12.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+
+            pb13.Image = Image.FromFile(AlbumImages.images[rInt]);
+            //pb14.Image = Image.FromFile(AlbumImages.images[rInt]);
+            if (rInt == 16) { rInt = rInt - 15; } else { rInt = rInt + 1; }
+
+            pb15.Image = Image.FromFile(AlbumImages.images[rInt]);
             
         }
 

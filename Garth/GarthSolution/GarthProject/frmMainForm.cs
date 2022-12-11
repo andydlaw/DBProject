@@ -14,6 +14,7 @@ namespace GarthProject
         }
         BindingSource albumBindingSource = new BindingSource();
         BindingSource songBindingSource= new BindingSource();
+        BindingSource factsBindingSource = new BindingSource();
         AlbumsDAO albumsDAO = new AlbumsDAO();
 
         private void btnLoadData_Click(object sender, EventArgs e)
@@ -347,7 +348,11 @@ namespace GarthProject
 
             songBindingSource.DataSource = albumsDAO.getSongsForAlbum((int)dgvAlbums.Rows[rowClicked].Cells[0].Value);
             dgvSongs.DataSource = songBindingSource;
-}
+
+            factsBindingSource.DataSource = albumsDAO.getFactsForAlbum((int)dgvAlbums.Rows[rowClicked].Cells[0].Value);
+            dgvAlbumFacts.DataSource = factsBindingSource
+;
+        }
 
         private void btnAddAlbum_Click(object sender, EventArgs e)
         {

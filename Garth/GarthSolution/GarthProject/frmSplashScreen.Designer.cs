@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pb00 = new System.Windows.Forms.PictureBox();
             this.pb01 = new System.Windows.Forms.PictureBox();
             this.pb03 = new System.Windows.Forms.PictureBox();
             this.pb05 = new System.Windows.Forms.PictureBox();
@@ -44,7 +43,9 @@
             this.mainPageMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pb00)).BeginInit();
+            this.pb00 = new System.Windows.Forms.PictureBox();
+            this.pb04 = new System.Windows.Forms.PictureBox();
+            this.pb02 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb03)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb05)).BeginInit();
@@ -54,6 +55,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb15)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb00)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb04)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -66,20 +70,10 @@
             this.lblTitle.Text = "Garth Brooks SQL Server DB Application";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pb00
-            // 
-            this.pb00.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb00.Location = new System.Drawing.Point(38, 156);
-            this.pb00.Name = "pb00";
-            this.pb00.Size = new System.Drawing.Size(248, 623);
-            this.pb00.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb00.TabIndex = 1;
-            this.pb00.TabStop = false;
-            // 
             // pb01
             // 
             this.pb01.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb01.Location = new System.Drawing.Point(345, 156);
+            this.pb01.Location = new System.Drawing.Point(440, 156);
             this.pb01.Name = "pb01";
             this.pb01.Size = new System.Drawing.Size(159, 153);
             this.pb01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +83,7 @@
             // pb03
             // 
             this.pb03.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb03.Location = new System.Drawing.Point(745, 156);
+            this.pb03.Location = new System.Drawing.Point(840, 156);
             this.pb03.Name = "pb03";
             this.pb03.Size = new System.Drawing.Size(159, 153);
             this.pb03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +93,7 @@
             // pb05
             // 
             this.pb05.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb05.Location = new System.Drawing.Point(1148, 156);
+            this.pb05.Location = new System.Drawing.Point(1243, 156);
             this.pb05.Name = "pb05";
             this.pb05.Size = new System.Drawing.Size(159, 153);
             this.pb05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +103,7 @@
             // pb07
             // 
             this.pb07.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb07.Location = new System.Drawing.Point(543, 337);
+            this.pb07.Location = new System.Drawing.Point(638, 337);
             this.pb07.Name = "pb07";
             this.pb07.Size = new System.Drawing.Size(159, 153);
             this.pb07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +113,7 @@
             // pb09
             // 
             this.pb09.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb09.Location = new System.Drawing.Point(944, 337);
+            this.pb09.Location = new System.Drawing.Point(1039, 337);
             this.pb09.Name = "pb09";
             this.pb09.Size = new System.Drawing.Size(159, 153);
             this.pb09.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +123,7 @@
             // pb11
             // 
             this.pb11.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb11.Location = new System.Drawing.Point(345, 522);
+            this.pb11.Location = new System.Drawing.Point(440, 522);
             this.pb11.Name = "pb11";
             this.pb11.Size = new System.Drawing.Size(159, 153);
             this.pb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +133,7 @@
             // pb13
             // 
             this.pb13.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb13.Location = new System.Drawing.Point(745, 522);
+            this.pb13.Location = new System.Drawing.Point(840, 522);
             this.pb13.Name = "pb13";
             this.pb13.Size = new System.Drawing.Size(159, 153);
             this.pb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +143,7 @@
             // pb15
             // 
             this.pb15.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pb15.Location = new System.Drawing.Point(1148, 522);
+            this.pb15.Location = new System.Drawing.Point(1243, 522);
             this.pb15.Name = "pb15";
             this.pb15.Size = new System.Drawing.Size(159, 153);
             this.pb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,7 +182,7 @@
             this.exitMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1343, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1424, 28);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -213,13 +207,46 @@
             this.exitMenuItem.Text = "Exit";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
+            // pb00
+            // 
+            this.pb00.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pb00.Location = new System.Drawing.Point(235, 337);
+            this.pb00.Name = "pb00";
+            this.pb00.Size = new System.Drawing.Size(159, 153);
+            this.pb00.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb00.TabIndex = 20;
+            this.pb00.TabStop = false;
+            // 
+            // pb04
+            // 
+            this.pb04.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pb04.Location = new System.Drawing.Point(37, 522);
+            this.pb04.Name = "pb04";
+            this.pb04.Size = new System.Drawing.Size(159, 153);
+            this.pb04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb04.TabIndex = 22;
+            this.pb04.TabStop = false;
+            // 
+            // pb02
+            // 
+            this.pb02.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pb02.Location = new System.Drawing.Point(37, 156);
+            this.pb02.Name = "pb02";
+            this.pb02.Size = new System.Drawing.Size(159, 153);
+            this.pb02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb02.TabIndex = 21;
+            this.pb02.TabStop = false;
+            // 
             // frmSplashScreen
             // 
             this.AcceptButton = this.btnMainPage;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(1343, 801);
+            this.ClientSize = new System.Drawing.Size(1424, 801);
+            this.Controls.Add(this.pb04);
+            this.Controls.Add(this.pb02);
+            this.Controls.Add(this.pb00);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.pb15);
@@ -230,7 +257,6 @@
             this.Controls.Add(this.pb05);
             this.Controls.Add(this.pb03);
             this.Controls.Add(this.pb01);
-            this.Controls.Add(this.pb00);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -238,7 +264,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Garth Brooks DB Project Splash Screen";
             this.Load += new System.EventHandler(this.frmSplashScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb00)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb03)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb05)).EndInit();
@@ -249,6 +274,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb15)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb00)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb04)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb02)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +285,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox pb00;
         private System.Windows.Forms.PictureBox pb01;
         private System.Windows.Forms.PictureBox pb03;
         private System.Windows.Forms.PictureBox pb05;
@@ -272,6 +299,9 @@
         private System.Windows.Forms.ToolStripMenuItem mainPageMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
+        private System.Windows.Forms.PictureBox pb00;
+        private System.Windows.Forms.PictureBox pb04;
+        private System.Windows.Forms.PictureBox pb02;
     }
 }
 

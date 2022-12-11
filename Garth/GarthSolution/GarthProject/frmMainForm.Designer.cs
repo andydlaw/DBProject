@@ -52,11 +52,13 @@
             this.txtAlbumName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSongs = new System.Windows.Forms.DataGridView();
+            this.dgvAlbumFacts = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlbums)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrentAlbum)).BeginInit();
             this.gbAddNewAlbum.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSongs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbumFacts)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSplashScreen
@@ -85,7 +87,7 @@
             // dgvAlbums
             // 
             this.dgvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlbums.Location = new System.Drawing.Point(296, 163);
+            this.dgvAlbums.Location = new System.Drawing.Point(296, 147);
             this.dgvAlbums.Name = "dgvAlbums";
             this.dgvAlbums.RowHeadersWidth = 51;
             this.dgvAlbums.RowTemplate.Height = 24;
@@ -103,35 +105,35 @@
             this.exitMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1512, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1512, 28);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // loadDataMenuItem
             // 
             this.loadDataMenuItem.Name = "loadDataMenuItem";
-            this.loadDataMenuItem.Size = new System.Drawing.Size(92, 26);
+            this.loadDataMenuItem.Size = new System.Drawing.Size(92, 24);
             this.loadDataMenuItem.Text = "Load Data";
             this.loadDataMenuItem.Click += new System.EventHandler(this.loadDataMenuItem_Click);
             // 
             // splashScreenMenuItem
             // 
             this.splashScreenMenuItem.Name = "splashScreenMenuItem";
-            this.splashScreenMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.splashScreenMenuItem.Size = new System.Drawing.Size(114, 24);
             this.splashScreenMenuItem.Text = "Splash Screen";
             this.splashScreenMenuItem.Click += new System.EventHandler(this.splashScreenMenuItem_Click);
             // 
             // helpMenuItem
             // 
             this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpMenuItem.Text = "Help";
             this.helpMenuItem.Click += new System.EventHandler(this.helpMenuItem_Click);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(47, 26);
+            this.exitMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitMenuItem.Text = "Exit";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
@@ -157,7 +159,7 @@
             // pbCurrentAlbum
             // 
             this.pbCurrentAlbum.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbCurrentAlbum.Location = new System.Drawing.Point(17, 206);
+            this.pbCurrentAlbum.Location = new System.Drawing.Point(17, 190);
             this.pbCurrentAlbum.Name = "pbCurrentAlbum";
             this.pbCurrentAlbum.Size = new System.Drawing.Size(262, 262);
             this.pbCurrentAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +180,7 @@
             this.gbAddNewAlbum.Controls.Add(this.lblAlbumArtist);
             this.gbAddNewAlbum.Controls.Add(this.txtAlbumName);
             this.gbAddNewAlbum.Controls.Add(this.label1);
-            this.gbAddNewAlbum.Location = new System.Drawing.Point(17, 541);
+            this.gbAddNewAlbum.Location = new System.Drawing.Point(17, 516);
             this.gbAddNewAlbum.Name = "gbAddNewAlbum";
             this.gbAddNewAlbum.Size = new System.Drawing.Size(865, 144);
             this.gbAddNewAlbum.TabIndex = 26;
@@ -283,12 +285,22 @@
             // dgvSongs
             // 
             this.dgvSongs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSongs.Location = new System.Drawing.Point(894, 532);
+            this.dgvSongs.Location = new System.Drawing.Point(898, 516);
             this.dgvSongs.Name = "dgvSongs";
             this.dgvSongs.RowHeadersWidth = 51;
             this.dgvSongs.RowTemplate.Height = 24;
-            this.dgvSongs.Size = new System.Drawing.Size(610, 215);
+            this.dgvSongs.Size = new System.Drawing.Size(606, 314);
             this.dgvSongs.TabIndex = 27;
+            // 
+            // dgvAlbumFacts
+            // 
+            this.dgvAlbumFacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlbumFacts.Location = new System.Drawing.Point(17, 676);
+            this.dgvAlbumFacts.Name = "dgvAlbumFacts";
+            this.dgvAlbumFacts.RowHeadersWidth = 51;
+            this.dgvAlbumFacts.RowTemplate.Height = 24;
+            this.dgvAlbumFacts.Size = new System.Drawing.Size(865, 154);
+            this.dgvAlbumFacts.TabIndex = 28;
             // 
             // frmMainForm
             // 
@@ -296,7 +308,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnSplashScreen;
-            this.ClientSize = new System.Drawing.Size(1512, 759);
+            this.ClientSize = new System.Drawing.Size(1512, 842);
+            this.Controls.Add(this.dgvAlbumFacts);
             this.Controls.Add(this.dgvSongs);
             this.Controls.Add(this.gbAddNewAlbum);
             this.Controls.Add(this.pbCurrentAlbum);
@@ -318,6 +331,7 @@
             this.gbAddNewAlbum.ResumeLayout(false);
             this.gbAddNewAlbum.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSongs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlbumFacts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +363,6 @@
         private System.Windows.Forms.TextBox txtAlbumName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvSongs;
+        private System.Windows.Forms.DataGridView dgvAlbumFacts;
     }
 }
